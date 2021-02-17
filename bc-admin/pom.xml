@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bcmall</artifactId>
+        <groupId>cn.xjjdog.bcmall</groupId>
+        <version>0.9.9</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bc-admin</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>cn.xjjdog.bcmall</groupId>
+            <artifactId>bc-utils</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xjjdog.bcmall</groupId>
+            <artifactId>module-crm</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xjjdog.bcmall</groupId>
+            <artifactId>module-imagesrv</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xjjdog.bcmall</groupId>
+            <artifactId>module-order</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xjjdog.bcmall</groupId>
+            <artifactId>module-product</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xjjdog.bcmall</groupId>
+            <artifactId>module-payment</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludeDevtools>false</excludeDevtools>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.16</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

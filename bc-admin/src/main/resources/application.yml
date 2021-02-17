@@ -1,0 +1,70 @@
+spring:
+  profiles:
+    active: dev,private
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+  flyway:
+    enabled: false
+
+  freemarker:
+    checkTemplateLocation: false
+
+  h2:
+    console:
+      enable: true
+      path: /h2
+      settings:
+        trace: true
+        web-allow-others: true
+  jpa:
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      #可选：create,create-drop,update,validate
+      ddl-auto: update
+
+management:
+  health:
+    probes:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+  # 消息配置
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      transaction-id-prefix: tx.
+    consumer:
+      properties:
+        isolation.level: read_committed
+    listener:
+      type: batch
+
+bcmall:
+  kafka:
+    bootstrapAddress: localhost:9092
+  jwt:
+    secret: bGsyMzRqbGs4MDIzNGxzZOWPr+i/nuaOpeWFi+mHjOaWr+acteWkq2lzb2Zpb3MyM3U4NDMybmRzZGZzb2tqampza2xmanNsayVeJl4mJSQjJCQlIzgzIDEyPTEyeTN1aXV5Jl4=
+    expire: 1440
+  upload:
+    image:
+      type: file
+      file:
+        root: /opt/bcmall
+        prefix: /s-img/
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        accessKeyId: unknown
+        secretAccessKey: unknown
+        bucketName: unknown
+        prefix: http://unknown.oss-cn-beijing.aliyuncs.com/
+

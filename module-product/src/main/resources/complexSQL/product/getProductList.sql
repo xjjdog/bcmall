@@ -20,3 +20,4 @@ WHERE  1=1
     #{ and spu.brand_id = :brandId }
     #{ and spu.state in (:state) }
 GROUP BY spu.id
+ORDER BY spu.created_date desc

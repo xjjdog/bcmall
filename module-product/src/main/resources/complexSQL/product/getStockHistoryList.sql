@@ -9,9 +9,11 @@ SELECT
     his.spu_id AS spuId,
     sku.spec_label AS specLabel,
     sku.spec_flat_key AS specFlatKey,
-    sku.thumbnail AS thumbnail
+    sku.thumbnail AS thumbnail,
+    spu.short_name AS shortName
 FROM stock_history his
 	LEFT JOIN base_sku sku ON his.sku_id = sku.id
+	LEFT JOIN base_spu spu ON his.spu_id = spu.id
 WHERE 1=1
     #{ and his.sku_id=:skuId }
     #{ and his.event_type in (:eventType) }

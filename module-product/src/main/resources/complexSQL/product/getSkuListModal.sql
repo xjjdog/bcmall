@@ -21,7 +21,7 @@ FROM base_sku sku
 	LEFT JOIN base_product_category c ON spu.category_id = c.id
 	LEFT JOIN base_product_unit u ON spu.unit_id = u.id
 	LEFT JOIN base_product_brand b ON spu.brand_id = b.id
-WHERE  spu.state=1 AND sku.storage > 0
+WHERE  spu.state=1
     #{ and spu.category_id = :categoryId }
     #{ and spu.brand_id = :brandId }
 ORDER BY sku.last_modified_date DESC

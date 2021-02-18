@@ -42,11 +42,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     /**
-     * 快速测试用，只要密码是123456就返回
+     * 快速测试用，只要密码是654321就返回
      * TODO 修改为数据库验证
      */
     private String mockPassword() {
-        return passwordEncoder.encode("123456");
+        return passwordEncoder.encode("654321");
     }
 
     /**
@@ -58,7 +58,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private Collection<GrantedAuthority> getAuthorities(String username) {
         List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
         authList.add(new SimpleGrantedAuthority("ROLE_DEMO"));
-        if (username.equals("admin")) {
+        if (username.equals("xjjdog")) {
             authList.add(new SimpleGrantedAuthority("ROLE_USER"));
             authList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }

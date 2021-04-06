@@ -1,4 +1,4 @@
-# 简介
+# bcmall [![Awesome](https://awesome.re/badge.svg)](http://xjjdog.cn)
 
 `bcMall` 是一个以`教学`为目的的电商系统。bcMall将为你展现一个典型的系统演进过程，所使用的主流技术完全开放。
 
